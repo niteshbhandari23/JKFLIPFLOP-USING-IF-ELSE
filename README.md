@@ -34,15 +34,53 @@ The maximum possible groupings of adjacent ones are already shown in the figure.
 
 **Procedure**
 
-/* write all the steps invloved */
+/* write all the steps invloved
+1.Open Quartus Prime and create a new project using the New Project Wizard.
+
+2.Create a Verilog HDL file and write the JK flip-flop code using if-else statements.
+
+3.Define inputs J, K, CLK and output Q.
+
+4.Save the file and set it as the Top-Level Entity.
+
+5.Compile the design and ensure there are no errors.
+
+6.Simulate using VWF/ModelSim and verify the output with the functional table.
+*/
 
 **PROGRAM**
 
 /* Program for flipflops and verify its truth table in quartus using Verilog programming. Developed by: RegisterNumber:
+
+module jk(j,k,clk,q,qbar);
+input j,k,clk;
+output reg q,qbar;
+initial 
+begin
+q=1'b0;
+qbar=1'b1;
+end 
+
+always @(posedge clk)
+begin 
+q<=(j&~q)|(~k&q);
+qbar<=~q;
+end
+endmodule
+
 */
 
 **RTL LOGIC FOR FLIPFLOPS**
 
+<img width="1919" height="958" alt="exp7delg" src="https://github.com/user-attachments/assets/5a0ed2ef-93dc-4b9f-bf50-937d45797cac" />
+
+
 **TIMING DIGRAMS FOR FLIP FLOPS**
 
+<img width="1919" height="1004" alt="exp7dewave" src="https://github.com/user-attachments/assets/b1967d5e-0a99-4251-ad9c-4f1f5d57f29b" />
+
+
 **RESULTS**
+
+
+The JK flip-flop was successfully implemented using Verilog with if–else statements.
